@@ -1,6 +1,4 @@
-import reactLogo from "./assets/react.svg"
 import { Input } from "./components/Input/Input"
-import viteLogo from "/vite.svg"
 import "./scss/main.scss"
 
 function App() {
