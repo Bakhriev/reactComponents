@@ -22,9 +22,14 @@ function App() {
 				errorMessage={"some error message"}
 				state="fieldError"
 			/>
+			<Input type="password" placeholder={"********"} />
+			<Input type="password" placeholder={"********"} state="fieldActive" />
+			<Input type="password" placeholder={"********"} state="fieldChecked" />
+
 			<Input
 				type="password"
 				placeholder={"********"}
+				state="fieldError"
 				errorMessage={"some error message"}
 			/>
 		</div>
