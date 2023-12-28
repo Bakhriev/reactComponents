@@ -1,0 +1,107 @@
+@import "../../scss/utils/mixins";
+
+.active {
+	.switch {
+		background-color: var(--green);
+	}
+	.toggle {
+		background-color: var(--white);
+		left: calc(100% - 12px);
+	}
+}
+
+.error {
+	.helperText {
+		display: block;
+	}
+}
+
+.inner {
+	display: flex;
+	align-items: center;
+	gap: 40px;
+}
+
+.title {
+	color: var(--black);
+	font-family: Inter;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 150%;
+	letter-spacing: 0.5px;
+}
+
+.helperText {
+	display: none;
+	margin-top: 10px;
+	color: #ec2020;
+	font-family: Roboto;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 133.33%;
+}
+
+.checkbox {
+	display: none;
+}
+
+.switch {
+	position: relative;
+	width: 30px;
+	height: 16px;
+	padding: 2px;
+	border: 1px solid var(--light-green);
+	border-radius: 10px;
+	cursor: pointer;
+	transition: background-color 300ms linear;
+	&:focus-visible {
+		outline-offset: 3px;
+		.toggle {
+			&::before {
+				scale: 1;
+			}
+		}
+	}
+
+	&:active {
+		outline-offset: 1px;
+	}
+
+	@include hover {
+		.toggle {
+			&::before {
+				scale: 1;
+			}
+		}
+	}
+}
+
+.toggle {
+	position: absolute;
+	z-index: 1;
+	left: 2px;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 11px;
+	height: 11px;
+	background-color: var(--light-green);
+	border-radius: 50%;
+	transition: left 250ms linear;
+
+	&::before {
+		content: "";
+		position: absolute;
+		z-index: -1;
+		top: 50%;
+		left: 50%;
+		translate: -50% -50%;
+
+		width: 25px;
+		height: 25px;
+
+		border-radius: 50%;
+		background-color: rgba(144, 202, 249, 0.2);
+		scale: 0;
+		transition: scale 300ms linear;
+	}
+}
