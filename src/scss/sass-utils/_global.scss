@@ -1,0 +1,120 @@
+body {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	font-family: "Inter", "Segoe UI", sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	color: var(--black);
+}
+
+/* width */
+.customScroll::-webkit-scrollbar {
+	width: 4px;
+}
+
+/* Track */
+.customScroll::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+
+.customScroll::-webkit-scrollbar-thumb {
+	background-color: #d4d4d4;
+	border-radius: 2px;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	overflow: hidden;
+}
+
+.main {
+	flex: 1;
+}
+
+.logo {
+	flex-shrink: 0;
+	&__img {
+		height: 48px;
+		width: 204px;
+		@media screen and (max-width: 992px) {
+			width: 130px;
+			height: 30px;
+		}
+	}
+}
+
+.container {
+	margin: 0 auto;
+
+	max-width: 1750px;
+	padding: 0 15px;
+}
+
+// on open some modals
+.disable-scroll {
+	overflow: hidden !important;
+}
+
+.fullWidth {
+	max-width: 100% !important;
+	width: 100% !important;
+}
+
+.title {
+	color: var(--black);
+	font-family: Inter;
+	font-size: 45px;
+	font-weight: 700;
+	line-height: normal;
+	@media screen and (max-width: 992px) {
+		font-size: 25px;
+	}
+}
+
+// Icons
+.playIcon,
+.saveIcon,
+.downloadIcon,
+.homeIcon,
+.searchIcon,
+.plusIcon {
+	display: block;
+}
+
+.playIcon,
+.saveIcon,
+.downloadIcon {
+	width: 12px;
+	height: 12px;
+	fill: var(--dark-gray);
+	transition: stroke 220ms ease-in-out, fill 220ms ease-in-out;
+}
+
+.playIcon {
+	fill: transparent;
+	stroke: var(--dark-gray);
+}
+
+.homeIcon {
+	width: 20px;
+	height: 20px;
+}
+
+.searchIcon {
+	width: 15px;
+	height: 15px;
+	fill: var(--black);
+}
+
+.plusIcon {
+	width: 24px;
+	height: 24px;
+	fill: var(--white);
+}
+
+.closeIcon {
+	width: 28px;
+	height: 28px;
+	fill: var(--white);
+}

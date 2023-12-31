@@ -1,0 +1,17 @@
+.header {
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__buttons {
+	}
+
+	&_position {
+		padding-top: 100px;
+		@media screen and (max-width: 992px) {
+			padding-top: 30px;
+		}
+	}
+}

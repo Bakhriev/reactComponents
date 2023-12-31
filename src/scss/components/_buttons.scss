@@ -1,0 +1,194 @@
+.btn {
+	padding: 15px 20px;
+
+	color: var(--black);
+	font-family: Inter;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: normal;
+
+	border-radius: 3px;
+	background-color: var(--white);
+
+	cursor: pointer;
+	user-select: none;
+
+	&:active {
+		scale: 0.97;
+	}
+
+	transition: background-color 220ms ease-in-out, color 220ms ease-in-out,
+		border 220ms ease-in-out, box-shadow 220ms ease-in-out;
+
+	@media screen and (max-width: 576px) {
+		padding: 12px 10px;
+	}
+}
+
+.btn_outline {
+	border: 1px solid var(--gray);
+	background-color: var(--white);
+
+	@include hover {
+		border: 1px solid var(--green);
+		background-color: var(--white);
+		color: var(--green);
+		box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
+	}
+	&.btn_disabled {
+		pointer-events: none;
+		color: var(--gray);
+		&:focus-visible {
+			outline: none;
+		}
+		&:active {
+			scale: 1;
+		}
+	}
+}
+
+.btn_filled {
+	background-color: var(--green);
+	color: var(--white);
+	@include hover {
+		background: var(--light-green);
+		box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
+	}
+
+	&.btn_disabled {
+		pointer-events: none;
+		background-color: var(--gray);
+		&:focus-visible {
+			outline: none;
+		}
+		&:active {
+			scale: 1;
+		}
+	}
+}
+
+// Text Btn
+.btn-text {
+	position: relative;
+	width: max-content;
+	color: var(--black);
+	font-family: Inter;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: normal;
+	transition: color 220ms ease-in-out;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 100%;
+		width: 100%;
+		height: 0.25px;
+		background-color: var(--black);
+		transition: background-color 220ms ease-in-out;
+	}
+
+	@include hover {
+		color: var(--gray);
+		&::before {
+			background-color: var(--gray);
+		}
+	}
+
+	&:active {
+		scale: 0.97;
+	}
+}
+
+.btn-text_primary {
+	color: var(--green);
+	width: max-content;
+	&::before {
+		background-color: var(--green);
+	}
+	@include hover {
+		color: var(--light-green);
+		&::before {
+			background-color: var(--light-green);
+		}
+	}
+}
+
+.btnArrow {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 10px;
+
+	&__text {
+		padding-left: 10px;
+		color: var(--black);
+		font-family: Inter;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: normal;
+	}
+
+	&__icon {
+		width: 16px;
+		height: 16px;
+	}
+}
+
+.action-btn {
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	user-select: none;
+
+	&__text {
+		color: var(--dark-gray);
+		transition: color 220ms ease-in-out;
+	}
+
+	@include hover {
+		.action-btn__text {
+			color: var(--green);
+		}
+		.playIcon {
+			stroke: var(--green);
+		}
+		.saveIcon,
+		.downloadIcon {
+			fill: var(--green);
+		}
+	}
+	&:active {
+		scale: 0.97;
+	}
+}
+
+.addBtn {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+
+	@include hover {
+		.addBtn__icon {
+			fill: var(--light-green);
+		}
+		.addBtn__text {
+			color: var(--light-green);
+		}
+	}
+
+	&__icon {
+		width: 8px;
+		height: 8px;
+		fill: var(--green);
+		transition: fill 220ms ease-in-out;
+	}
+
+	&__text {
+		color: var(--green);
+		font-family: Inter;
+		font-size: 14px;
+		transition: color 220ms ease-in-out;
+	}
+}

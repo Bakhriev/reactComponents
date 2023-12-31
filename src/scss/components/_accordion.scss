@@ -1,0 +1,19 @@
+.accordion {
+	&__wrapper {
+		margin-top: 25px;
+		display: none;
+	}
+
+	&__icon {
+		transition: 120ms ease-in-out;
+	}
+}
+
+.accordion_active {
+	.accordion__wrapper {
+		display: block;
+	}
+	.accordion__icon {
+		transform: rotate(-180deg);
+	}
+}

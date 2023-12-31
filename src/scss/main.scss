@@ -1,6 +1,46 @@
+// base
 @import "./base/reset";
 
-@import "./utils/variables";
+// fonts
+@import "./fonts/fonts";
 
-@import "./utils/global";
+// sass-utils
+@import "./sass-utils/variables";
+@import "./sass-utils/mixins";
+@import "./sass-utils/global";
 
+// components
+@import "./components/overlay";
+@import "./components/buttons.scss";
+@import "./components/input";
+@import "./components/search";
+@import "./components/checkbox";
+@import "./components/dropdown";
+@import "./components/profile";
+@import "./components/addCard";
+@import "./components/testCard";
+@import "./components/popup";
+@import "./components/switch";
+@import "./components/switchGroup";
+@import "./components/table";
+@import "./components/accordion";
+
+// layouts
+@import "./layout/header";
+
+@import "./layout/form";
+@import "./layout/auth";
+@import "./layout/testList";
+@import "./layout/draw";
+
+@import "./layout/footer";
+
+.ui-test-grid {
+	padding: 100px;
+	padding-bottom: 500px;
+
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	align-items: flex-start;
+	gap: 150px;
+}

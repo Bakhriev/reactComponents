@@ -1,0 +1,140 @@
+.dropdown {
+	position: relative;
+	width: 100%;
+
+	&__inner {
+		position: relative;
+		border-radius: 4px;
+		border: 1px solid var(--gray);
+	}
+
+	&__title {
+		margin-bottom: 10px;
+		padding-left: 10px;
+		color: var(--black);
+		line-height: 100%;
+	}
+
+	&__toggle {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 10px;
+		padding: 10px;
+	}
+
+	&__input {
+		border: none;
+		margin: 0;
+		padding: 0;
+		outline: none;
+		user-select: none;
+		pointer-events: none;
+		width: 100%;
+
+		color: var(--black);
+		font-family: Inter;
+		line-height: 150%;
+		letter-spacing: 0.5px;
+
+		&::placeholder {
+			color: var(--gray);
+		}
+	}
+
+	&__icon {
+		width: 16px;
+		height: 16px;
+		pointer-events: none;
+	}
+
+	&__popup {
+		position: absolute;
+		left: 0;
+		top: 99%;
+		z-index: 1;
+
+		padding: 10px;
+		max-width: 100%;
+		width: 100%;
+
+		display: none;
+
+		border-radius: 0px 0px 4px 4px;
+
+		background-color: var(--white);
+		border: 1px solid var(--gray);
+	}
+
+	&__search {
+		margin-bottom: 10px;
+	}
+
+	&__menu {
+		padding-right: 10px;
+		padding-bottom: 20px;
+		padding-top: 2px;
+		padding-left: 2px;
+		max-height: 150px;
+		overflow: auto;
+		background-color: var(--white);
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	&__item {
+		text-align: left;
+		padding: 0 5px;
+
+		color: var(--black);
+		line-height: 150%;
+		letter-spacing: 0.5px;
+		background-color: transparent;
+		transition: background-color 220ms ease-in-out, color 220ms ease-in-out;
+
+		@include hover {
+			color: var(--white);
+			background-color: var(--green);
+		}
+		&:active {
+			background-color: var(--green);
+			scale: 0.97;
+		}
+	}
+
+	&__helperText {
+		display: none;
+		padding-left: 10px;
+		margin-top: 10px;
+		color: var(--red);
+
+		font-size: 12px;
+		line-height: 133.33%;
+	}
+}
+
+.dropdown_active {
+	.dropdown__inner {
+		border-bottom-left-radius: 0px;
+		border-bottom-right-radius: 0px;
+		border-bottom-color: rgba(0, 0, 0, 0);
+	}
+	.dropdown__icon {
+		transform: rotate(180deg);
+	}
+	.dropdown__popup {
+		display: block;
+		border-top: none;
+	}
+}
+
+.dropdown_error {
+	.dropdown__popup {
+		top: 72%;
+	}
+	.dropdown__helperText {
+		display: block;
+	}
+}

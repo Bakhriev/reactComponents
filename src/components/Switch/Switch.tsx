@@ -1,27 +1,17 @@
-import { useState } from "react"
-import { SwitchProps } from "../../types/switch"
-import styles from "./Switch.module.scss"
+import React from "react"
+import { SwitchProps } from "../../interfaces/switch"
 
-export const Switch: React.FC<SwitchProps> = ({
-	title,
-	status,
-	helperText
-}) => {
+export const Switch: React.FC<SwitchProps> = ({ title, helperText }) => {
 	return (
-		<div className={`${status ? styles[status] : ""}`}>
-			<div className={styles.inner}>
-				<div className={styles.title}>{title}</div>
-				<button className={styles.switch}>
-					<input
-						className={styles.checkbox}
-						type="checkbox"
-						id="checkbox"
-						checked
-					/>
-					<div className={styles.toggle}></div>
-				</button>
-			</div>
-			{helperText && <div className={styles.helperText}>{helperText}</div>}
+		<div className="switch-group">
+			<label className="switch-group__wrapper">
+				<span className="switch-group__title">{title}</span>
+				<label className="switch">
+					<input type="checkbox" />
+					<span className="switch__slider"></span>
+				</label>
+			</label>
+			<span className="switch-group__helperText">{helperText}</span>
 		</div>
 	)
 }
